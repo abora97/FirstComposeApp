@@ -1,5 +1,6 @@
 package com.abora.firstcomposeapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -86,7 +87,12 @@ class MainActivity : ComponentActivity() {
                 Text(
                     text = "Abora", modifier = Modifier
                         .offset(20.dp, 20.dp) // like margin without push view away
-                        .clickable { Toast.makeText(this@MainActivity,"hello",Toast.LENGTH_LONG).show() }
+                        .clickable {
+                            Toast
+                                .makeText(this@MainActivity, "hello", Toast.LENGTH_LONG)
+                                .show()
+                                startActivity(Intent(this@MainActivity,Main2Activity::class.java))
+                        }
                 )
                 Spacer(modifier = Modifier.height(50.dp))
                 Text(text = "Android")
