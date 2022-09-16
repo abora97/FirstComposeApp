@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -95,7 +96,7 @@ class MainActivity : ComponentActivity() {
                         }
                 )
                 Spacer(modifier = Modifier.height(50.dp))
-                Text(text = "Android")
+                Text(text = "Android",textDecoration = TextDecoration.LineThrough)
             }
         }
     }

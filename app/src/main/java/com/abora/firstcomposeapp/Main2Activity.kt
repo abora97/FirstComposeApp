@@ -21,7 +21,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -34,19 +39,66 @@ class Main2Activity : ComponentActivity() {
             val painter = painterResource(id = R.drawable.ic_lily_simba)
             val description = "simba !!!"
             val title = "lily is my cat"
-            Box(
+
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth(0.5f)
-                    .fillMaxHeight(0.4f)
-                    .padding(16.dp)
-                    .clickable {
-                        Toast
-                            .makeText(this, description, Toast.LENGTH_SHORT)
-                            .show()
-                    }
+                    .fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.SpaceAround
             ) {
-                ImageCard(painter = painter, contentDes = description, title = title)
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth(0.5f)
+                        .fillMaxHeight(0.4f)
+                        .padding(16.dp)
+                        .clickable {
+                            Toast
+                                .makeText(this@Main2Activity, description, Toast.LENGTH_SHORT)
+                                .show()
+                        }
+                ) {
+                    ImageCard(painter = painter, contentDes = description, title = title)
+                }
+
+                Box(
+                    modifier = Modifier
+
+                        .fillMaxWidth()
+                        .fillMaxHeight(.5f)
+                        .background(Color(0xFF000000))
+                ) {
+                    Text(
+                        modifier = Modifier.padding(20.dp),
+                        color = Color.White,
+                        fontSize = 20.sp,
+                        textAlign = TextAlign.Center,
+                        textDecoration = TextDecoration.Underline,
+                        text = buildAnnotatedString {
+                            withStyle(
+                                style = SpanStyle(
+                                    color = Color.Green,
+                                    fontSize = 50.sp
+                                )
+                            ) {
+                                append("J")
+                            }
+                            append("etpack")
+                            withStyle(
+                                style = SpanStyle(
+                                    color = Color.Green,
+                                    fontSize = 50.sp
+                                )
+                            ){
+                                append("C")
+                            }
+                            append("ompose")
+                        }
+
+                    )
+                }
             }
+
+
         }
     }
 }
