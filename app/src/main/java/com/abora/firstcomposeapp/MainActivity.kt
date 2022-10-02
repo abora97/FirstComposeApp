@@ -72,33 +72,63 @@ class MainActivity : ComponentActivity() {
 
             Column(
                 modifier = Modifier
-                    .background(Color.Green)
-                    .fillMaxHeight(0.5f)
-                    .fillMaxWidth()
-//                    .width(300.dp)
-//                    .requiredWidth(600.dp)
-//                    .padding(top=20.dp , bottom = 30.dp)
-                    .padding(10.dp)
-                    .border(5.dp, Color.Yellow)
-                    .padding(5.dp)
-                    .border(10.dp, Color.Red, shape = CircleShape),
+                    .fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.SpaceAround
             ) {
-                Text(
-                    text = "Abora", modifier = Modifier
-                        .offset(20.dp, 20.dp) // like margin without push view away
-                        .clickable {
-                            Toast
-                                .makeText(this@MainActivity, "hello", Toast.LENGTH_LONG)
-                                .show()
-                                startActivity(Intent(this@MainActivity,Main2Activity::class.java))
-                        }
-                )
-                Spacer(modifier = Modifier.height(50.dp))
-                Text(text = "Android",textDecoration = TextDecoration.LineThrough)
+                Column(
+                    modifier = Modifier
+                        .background(Color.Green)
+                        .fillMaxHeight(.5f)
+                        .fillMaxSize()
+                        .fillMaxWidth()
+//                    .width(300.dp)
+//                    .requiredWidth(600.dp)
+//                    .padding(top=20.dp , bottom = 30.dp)
+                        .padding(10.dp)
+                        .border(5.dp, Color.Yellow)
+                        .padding(5.dp)
+                        .border(10.dp, Color.Red, shape = CircleShape),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.SpaceAround
+                ) {
+                    Text(
+                        text = "Abora", modifier = Modifier
+                            .offset(20.dp, 20.dp) // like margin without push view away
+                            .clickable {
+                                Toast
+                                    .makeText(this@MainActivity, "hello", Toast.LENGTH_LONG)
+                                    .show()
+                                startActivity(Intent(this@MainActivity, Main2Activity::class.java))
+                            }
+                    )
+                    Spacer(modifier = Modifier.height(50.dp))
+                    Text(text = "Android", textDecoration = TextDecoration.LineThrough)
+                }
+
+                Column(
+                    modifier = Modifier
+                        .fillMaxHeight(1f)
+                        .fillMaxSize()
+                        .fillMaxWidth()
+                        .background(Color.Gray),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.SpaceAround
+                ) {
+                    Text(
+                        text = "State", modifier = Modifier
+                            .clickable {
+                                Toast
+                                    .makeText(this@MainActivity, "State", Toast.LENGTH_LONG)
+                                    .show()
+                                startActivity(Intent(this@MainActivity, StateActivity::class.java))
+                            }
+                    )
+                }
             }
         }
+
+
     }
 }
 
