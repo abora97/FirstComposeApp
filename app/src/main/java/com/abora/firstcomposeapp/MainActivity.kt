@@ -124,6 +124,16 @@ class MainActivity : ComponentActivity() {
                                 startActivity(Intent(this@MainActivity, StateActivity::class.java))
                             }
                     )
+
+                    Text(
+                        text = "Textfields, Buttons & Showing Snackbars", modifier = Modifier
+                            .clickable {
+                                Toast
+                                    .makeText(this@MainActivity, "Textfields, Buttons & Showing Snackbars", Toast.LENGTH_LONG)
+                                    .show()
+                                startActivity(Intent(this@MainActivity, TextBtnSnackActivity::class.java))
+                            }
+                    )
                 }
             }
         }
