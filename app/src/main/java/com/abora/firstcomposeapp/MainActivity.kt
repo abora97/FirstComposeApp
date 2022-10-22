@@ -134,6 +134,16 @@ class MainActivity : ComponentActivity() {
                                 startActivity(Intent(this@MainActivity, TextBtnSnackActivity::class.java))
                             }
                     )
+
+                    Text(
+                        text = "Lists", modifier = Modifier
+                            .clickable {
+                                Toast
+                                    .makeText(this@MainActivity, "Lists - Android Jetpack Compose - Part 8", Toast.LENGTH_LONG)
+                                    .show()
+                                startActivity(Intent(this@MainActivity, ListActivity::class.java))
+                            }
+                    )
                 }
             }
         }
