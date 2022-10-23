@@ -50,7 +50,12 @@ class ListTopicsActivity : ComponentActivity() {
     private fun openActivity(index: Int) {
         when (index) {
             0 -> {
-
+                startActivity(
+                    Intent(
+                        this@ListTopicsActivity,
+                        ConstraintLayoutActivity::class.java
+                    )
+                )
             }
             1 -> {
                 startActivity(

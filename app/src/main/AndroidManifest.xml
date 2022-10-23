@@ -14,6 +14,15 @@
         android:theme="@style/Theme.FirstComposeApp"
         tools:targetApi="31">
         <activity
+            android:name=".ConstraintLayoutActivity"
+            android:exported="false"
+            android:label="@string/title_activity_constraint_layout"
+            android:theme="@style/Theme.FirstComposeApp">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ListTopicsActivity"
             android:exported="true"
             android:label="@string/title_activity_list_topics"
@@ -23,6 +32,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -32,7 +42,6 @@
             android:exported="false"
             android:label="@string/title_activity_list"
             android:theme="@style/Theme.FirstComposeApp">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -55,9 +64,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:theme="@style/Theme.FirstComposeApp">
-
-        </activity>
+            android:theme="@style/Theme.FirstComposeApp" />
     </application>
 
 </manifest>
