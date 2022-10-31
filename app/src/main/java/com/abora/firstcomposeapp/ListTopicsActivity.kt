@@ -29,7 +29,7 @@ class ListTopicsActivity : ComponentActivity() {
         setContent {
             LazyColumn() {
                 itemsIndexed(
-                    listOf("ConstraintLayout", "ListActivity","StateActivity","TextBtnSnackActivity","MyCat")
+                    listOf("ConstraintLayout", "ListActivity","StateActivity","TextBtnSnackActivity","MyCat","SimpleAnimations")
                 ) { index, item ->
                     Text(text = item,
                         fontSize = 24.sp,
@@ -87,6 +87,14 @@ class ListTopicsActivity : ComponentActivity() {
                     Intent(
                         this@ListTopicsActivity,
                         Main2Activity::class.java
+                    )
+                )
+            }
+            5 -> {
+                startActivity(
+                    Intent(
+                        this@ListTopicsActivity,
+                        SimpleAnimationsActivity::class.java
                     )
                 )
             }

@@ -39,7 +39,7 @@ class ConstraintLayoutActivity : ComponentActivity() {
 
             val greenBox = createRefFor("greenBox")
             val redBox = createRefFor("redBox")
-val guideLine=createGuidelineFromTop(0.5f)
+            val guideLine = createGuidelineFromTop(0.5f)
 
             constrain(greenBox) {
                 top.linkTo(parent.top)
