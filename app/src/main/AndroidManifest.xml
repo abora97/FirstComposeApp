@@ -14,6 +14,15 @@
         android:theme="@style/Theme.FirstComposeApp"
         tools:targetApi="31">
         <activity
+            android:name=".AnimatedCircularActivity"
+            android:exported="false"
+            android:label="@string/title_activity_animated_circular"
+            android:theme="@style/Theme.FirstComposeApp">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SimpleAnimationsActivity"
             android:exported="false"
             android:label="@string/title_activity_simple_animations"
